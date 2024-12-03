@@ -22,29 +22,18 @@ def is_safe(line: list[int]) -> bool:
 
 
 def is_safe_single_removal(line: list[int]) -> bool:
-    did_remove_before = False
-    input = []
-    if line[0] == line[1]:
-        line = list(line[1:])
-        did_remove_before= True
-        if line[1] == line[2]:
-            return False
+    """Brute force try, runs fast enough."""
+    if is_safe(line):
+        return True
+    for skip_index in range(len(line)):
+        if is_safe(line[:skip_index] + line[skip_index+1:]):
+            return True
+    return False
 
-
-    is_increasing = line[0] < line[1]
-    input = line if is_increasing else list(reversed(line))
-    last = input[0]
-    for next in input[1:]:
-        if next - last not in [1, 2, 3]:
-            if not did_remove_before:
-                did_remove_before = True
-                continue
-            return False
-        last = next
-    return True
 
 def part_1(lines: list[list[int]]) -> int:
     return sum(is_safe(line) for line in lines)
+
 
 def part_2(lines: list[list[int]]) -> int:
     return sum(is_safe_single_removal(line) for line in lines)
