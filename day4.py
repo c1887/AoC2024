@@ -1,6 +1,8 @@
 def parse_input(file_name) -> list[list[int]]:
     pass
 
+def count_xmas(grid: list[str]) -> int:
+    pass
 
 if __name__ == "__main__":
     print(parse_input("day4.txt"))
