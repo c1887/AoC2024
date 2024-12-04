@@ -1,6 +1,7 @@
 import pytest
 from day4 import (
     count_xmas,
+    count_stars,
     right,
     left,
     up,
@@ -81,3 +82,6 @@ def test_down_left(example: list[str]) -> None:
 
 def test_example(example: list[str]) -> None:
     assert count_xmas(example) == 18
+
+def test_example_starts(example: list[str]) -> None:
+    assert count_stars(example) == 9
