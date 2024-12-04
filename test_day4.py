@@ -24,7 +24,7 @@ def example() -> list[str]:
         "SMSMSASXSS",  # 6
         "SAXAMASAAA",
         "MAMMMXMMMM",  # 8
-        "MXMXAXMAS",
+        "MXMXAXMASX",
     ]
 
 
