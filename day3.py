@@ -65,8 +65,11 @@ def list_to_single_str(words: list[str]) -> str:
     return "".join(words)
 
 def part_2(words: list[str]) -> int:
-    filtered_words = [list_to_single_str(filter_donts(do_dont_products(word))) for word in words]
-    return sum([sum(products(word)) for word in filtered_words])
+    # Maybe, the lines are not to be looked at individually, but the disabled state works
+    # across lines?
+    big_word = list_to_single_str(words)
+    filtered_words = filter_donts(do_dont_products(big_word))
+    return sum(products(list_to_single_str(filtered_words)))
 
 
 if __name__ == "__main__":
