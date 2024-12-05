@@ -1,9 +1,9 @@
 from day5 import (
-    part_1,
-    _create_order_dict,
     Ordering,
-    is_correctly_ordered,
+    _create_order_dict,
     correct_order,
+    is_correctly_ordered,
+    part_1,
     part_2,
 )
 

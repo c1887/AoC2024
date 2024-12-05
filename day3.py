@@ -61,8 +61,10 @@ def filter_donts(words: list[str]) -> list[str]:
 def part_1(words: list[str]) -> int:
     return sum([sum(products(word)) for word in words])
 
+
 def list_to_single_str(words: list[str]) -> str:
     return "".join(words)
+
 
 def part_2(words: list[str]) -> int:
     # Maybe, the lines are not to be looked at individually, but the disabled state works

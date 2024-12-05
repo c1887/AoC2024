@@ -26,7 +26,7 @@ def is_safe_single_removal(line: list[int]) -> bool:
     if is_safe(line):
         return True
     for skip_index in range(len(line)):
-        if is_safe(line[:skip_index] + line[skip_index+1:]):
+        if is_safe(line[:skip_index] + line[skip_index + 1 :]):
             return True
     return False
 

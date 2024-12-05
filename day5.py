@@ -71,12 +71,7 @@ def part_2(orderings: list[list[int]], updates: list[list[int]]) -> int:
         for update in updates
         if not is_correctly_ordered(ordering, update)
     ]
-    return sum(
-        [
-            get_middle_number(update)
-            for update in corrected
-        ]
-    )
+    return sum([get_middle_number(update) for update in corrected])
 
 
 if __name__ == "__main__":

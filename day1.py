@@ -9,6 +9,7 @@ def parse_input(file_name) -> tuple[list[int], list[int]]:
             right.append(int(numbers[1]))
     return (left, right)
 
+
 def generate_counts(right: list[int]) -> dict[int, int]:
     d: dict[int, int] = {}
     for n in right:
@@ -20,11 +21,13 @@ def sim_score(left: list[int], count: dict[int]) -> int:
     products = [left_value * count.get(left_value, 0) for left_value in left]
     return sum(products)
 
+
 def part_1(left: list[int], right: list[int]) -> int:
     ls = sorted(left)
     rs = sorted(right)
-    diffs = [abs(l -r) for l, r in zip(ls, rs)]
+    diffs = [abs(l - r) for l, r in zip(ls, rs)]
     return sum(diffs)
+
 
 def part_2(left: list[int], right: list[int]) -> int:
     return sim_score(left, generate_counts(right))

@@ -102,8 +102,7 @@ def is_star(grid: list[str], row: int, col: int) -> bool:
             grid[row - 1][col + 1] == "M"
             and grid[row + 1][col - 1] == "S"
             and grid[row + 1][col + 1] == "S"
-            or
-            grid[row - 1][col + 1] == "S"
+            or grid[row - 1][col + 1] == "S"
             and grid[row + 1][col - 1] == "M"
             and grid[row + 1][col + 1] == "S"
         )
@@ -112,8 +111,7 @@ def is_star(grid: list[str], row: int, col: int) -> bool:
             grid[row - 1][col + 1] == "S"
             and grid[row + 1][col - 1] == "M"
             and grid[row + 1][col + 1] == "M"
-            or
-            grid[row - 1][col + 1] == "M"
+            or grid[row - 1][col + 1] == "M"
             and grid[row + 1][col - 1] == "S"
             and grid[row + 1][col + 1] == "M"
         )
