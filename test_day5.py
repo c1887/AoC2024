@@ -1,4 +1,11 @@
-from day5 import part_1, _create_order_dict, Ordering, is_correctly_ordered
+from day5 import (
+    part_1,
+    _create_order_dict,
+    Ordering,
+    is_correctly_ordered,
+    correct_order,
+    part_2,
+)
 
 
 def test_create_order_dict() -> None:
@@ -25,6 +32,15 @@ def test_correct_update() -> None:
     assert is_correctly_ordered(ordering, [1, 3, 2, 4])
     assert not is_correctly_ordered(ordering, [3, 1, 2, 4])
 
+
+def test_correct_order() -> None:
+    ordering = Ordering([[1, 2], [1, 3]])
+    faulty = [3, 1, 2, 4]
+    assert not is_correctly_ordered(ordering, faulty)
+    corrected = correct_order(ordering, faulty)
+    assert is_correctly_ordered(ordering, corrected)
+    # do we still have the same elements?
+    assert sorted(faulty) == sorted(corrected)
 
 
 def test_example() -> None:
@@ -60,3 +76,4 @@ def test_example() -> None:
         [97, 13, 75, 29, 47],
     ]
     assert part_1(orderings, updates) == 143
+    assert part_2(orderings, updates) == 123
